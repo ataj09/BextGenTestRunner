@@ -4,6 +4,7 @@ import glob
 
 
 def check_file_integrity():
+    """Check if programA is in the same directory as programB"""
     current_dir = os.getcwd()
     files = glob.glob(os.path.join(current_dir, 'programA.py'))
 
@@ -13,7 +14,7 @@ def check_file_integrity():
         return None
 
 def send_command(process, command):
-
+    """Sends command to the process (programA)"""
     process.stdin.write(command + "\n")
     process.stdin.flush()
     return process.stdout.readline().strip()
@@ -25,6 +26,7 @@ def main():
         print('Program A is missing')
         return
 
+    #starts program A as new process
     process = subprocess.Popen(
         ["python", programA_path],
         stdin = subprocess.PIPE,
