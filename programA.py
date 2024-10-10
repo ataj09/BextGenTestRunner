@@ -3,7 +3,7 @@ import random
 
 def main():
 
-    int_max = 2**63 - 1 #assume max integer size from python 2
+    int_max = 2**8 - 1 #assume max integer size as uint8
     while True:
         command = input().strip()
 
